@@ -133,14 +133,17 @@ public class CreatActivity extends AppCompatActivity {
             bis = new BufferedInputStream(fis);
             dis = new DataInputStream(bis);
 
-            String str = "";
+
+            String str1 = "";
             while (dis.available() > 0) {
+                String str = "";
                 String studentID = dis.readUTF();
 
-                str += studentID + "\n " ;
-
-                tv_display.setText(str);
+                str1 += studentID + "\n " ;
+                str = studentID;
+                tv_display.setText(str1 + "\n");
                 list1.add(str);
+                System.out.println(list1);
             }
 
 
