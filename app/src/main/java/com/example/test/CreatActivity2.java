@@ -57,15 +57,38 @@ public class CreatActivity2 extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (list2.size() > 0) {
-                    Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
-                    intent.putExtra("list1", list1);
-                    intent.putExtra("list2", list2);
-                    startActivity(intent);
+                if (list2_name.size() > 0) {   // 후보자 이름은 무조건 작성되어야합니다 (한명이상)
+                    int j = 0;
+                    for (int i = 0; i < list2_pledge.size(); i++) {
+                        String a = (String) list2_pledge.get(i);
+                        if (a.length() == 0) {
+                            j += 1;
+                            //continue;
+                        }
+                    }
+
+                    if (j == list2_pledge.size()) {
+                        Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
+                        intent.putExtra("list1", list1);
+                        intent.putExtra("list2_name", list2_name);
+                        startActivity(intent);
+
+                    } else if ( j == 0 ) {
+                        Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
+                        intent.putExtra("list1", list1);
+                        intent.putExtra("list2_name", list2_name);
+                        intent.putExtra("list2_pledge", list2_pledge);
+                        startActivity(intent);
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), "후보 공약이 일부 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
+
+                    }
                 } else {
-                    Toast.makeText(getApplicationContext(), "후보 이름이 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "후보자 이름이 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
 
     }
@@ -116,14 +139,16 @@ public class CreatActivity2 extends AppCompatActivity {
         //지정된 파일 자체를 삭제할 수 있게하는 코드
         if (deleteFile(mFILENAME)) {
             tv_display.setText("delete success");
-            list2.clear();
+            list2_name.clear();
+            list2_pledge.clear();
         }else
             tv_display.setText("delete failed");
     }
 
 
 
-    ArrayList list2 = new ArrayList();
+    ArrayList list2_name = new ArrayList();
+    ArrayList list2_pledge = new ArrayList();
     private void displayContacts() {
         FileInputStream fis = null;
         BufferedInputStream bis = null;
@@ -139,11 +164,13 @@ public class CreatActivity2 extends AppCompatActivity {
                 String name = dis.readUTF();
                 String pledge = dis.readUTF();
 
-                String name_pledge = name + " | " + pledge;
+                list2_name.add(name);
+                list2_pledge.add(pledge);
 
-                list2.add(name_pledge);
+                //String name_pledge = name + " | " + pledge;
+                //list2.add(name_pledge);
 
-                str += name + " | " + pledge + '\n';
+                str += name + " : " + pledge + "\n";
             }
             tv_display.setText(str);
 
