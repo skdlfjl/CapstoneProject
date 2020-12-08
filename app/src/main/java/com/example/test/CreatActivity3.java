@@ -60,7 +60,7 @@ public class CreatActivity3 extends AppCompatActivity {
                 sb2.append(list2_name.get(i) + "\n");
                 tv_list2.setText(sb2.toString());
             }
-        } else {   // 공약이 null값이 아니면 sb에 이름과 공약 같이 이어서 저장
+        } else {   // 공약이 null값이 아니면 sb에 이름과 공약 같이 이어서 저장 (텍스트뷰에 찍힘)
             list2_pledge_size = list2_pledge.size();
             for(int i=0; i<list2_name_size; i++){
                 sb2.append(list2_name.get(i) + " : " + list2_pledge.get(i) + "\n");
