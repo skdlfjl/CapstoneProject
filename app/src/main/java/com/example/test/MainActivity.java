@@ -1,5 +1,5 @@
 package com.example.test;
-// 확인용 수정
+// 확인용 수정2
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
