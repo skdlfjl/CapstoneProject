@@ -58,6 +58,27 @@
             android:background="@android:color/holo_blue_light"
             android:textSize="20sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_list3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="print(len(list1))"
+            android:background="@android:color/holo_blue_light"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_list4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="print(len(list2))"
+            android:background="@android:color/holo_blue_light"
+            android:textSize="20sp" />
+
 
     </LinearLayout>
 

@@ -136,16 +136,15 @@ public class CreatActivity extends AppCompatActivity {
 
             String str = "";
             while (dis.available() > 0) {
-                //String str = "";
                 String studentID = dis.readUTF();
+
+                list1.add(studentID);
 
                 str += studentID + "\n";
 
-                //tv_display.setText(str);
-                //list1.add(str);
             }
             tv_display.setText(str);
-            list1.add(str);
+            //list1.add(str);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

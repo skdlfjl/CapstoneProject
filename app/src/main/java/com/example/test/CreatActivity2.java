@@ -139,11 +139,15 @@ public class CreatActivity2 extends AppCompatActivity {
                 String name = dis.readUTF();
                 String pledge = dis.readUTF();
 
-                str += name + " | " + pledge + "\n";
+                String name_pledge = name + " | " + pledge;
+
+                list2.add(name_pledge);
+
+                str += name + " | " + pledge + '\n';
             }
             tv_display.setText(str);
 
-            list2.add(str);
+            //list2.add(str);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
