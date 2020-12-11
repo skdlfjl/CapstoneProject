@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SubActivity2">
+    tools:context=".SubActivity3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,14 +19,14 @@
             android:id="@+id/tv_studentID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="후보의 공약을 보여주는 페이지.\n이 textview에는 넘어온 학번이 찍힙니다"
+            android:text="투표를 진행하는 페이지입니다.\n이 textview에는 넘어온 학번이 찍힙니다"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_token"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="후보의 공약을 보여주는 페이지.\n이 textview에는 넘어온 토큰이 찍힙니다"
+            android:text="투표를 진행하는 페이지입니다.\n이 textview에는 넘어온 토큰이 찍힙니다"
             android:textSize="20sp" />
 
         <LinearLayout
@@ -49,4 +49,4 @@
 
 
 
-</ScrollView>
+</LinearLayout>

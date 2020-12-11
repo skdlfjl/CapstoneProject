@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test">
+        <activity android:name=".SubActivity3"></activity>
+        <activity android:name=".TestActivity" />
         <activity android:name=".SubActivity2" />
         <activity android:name=".CreatActivity3" />
         <activity android:name=".CreatActivity2" />
