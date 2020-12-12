@@ -19,11 +19,10 @@ with open("./tokens.txt" , "r") as f:
         token.append(line)
         line = f.readline()
 
-number = 1
+
 
 for x in range(len(token[0])) :
-        tokens[int(number)] = token[0][x]
-        number +=1
+        tokens[token[0][x]] = 0
 
 
 #dict1 에 tokens 추가
