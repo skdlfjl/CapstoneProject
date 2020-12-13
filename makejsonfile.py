@@ -53,6 +53,6 @@ for x in range(len(searches[0])) :
 dict1["search"] = search
 
 
-with open("dict1.json", 'w') as make_file:
-    json.dump(dict1, make_file, ensure_ascii=False, indent=",")
+with open("dict_one.json", 'w') as make_file:
+    json.dump(dict1, make_file, ensure_ascii=False, indent="")
 
