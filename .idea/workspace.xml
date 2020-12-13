@@ -26,11 +26,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9f11e3a-b746-42a1-be41-b26fab53b158" name="Default Changelist" comment="move README.md to image directory">
-      <change afterPath="$PROJECT_DIR$/dict_one.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/erase.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erase.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/.idea/json.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/edit_dict.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/makeeditfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/token_data/edit_search.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/token_data/edit_token.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dict1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/makejsonfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/makejsonfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/makejsonfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/json/makejsonfile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +86,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tmtp2020-2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -85,10 +94,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jimin\PycharmProjects\capstoneproject\json\token_data" />
+      <recent name="C:\Users\jimin\PycharmProjects\capstoneproject\json" />
       <recent name="C:\Users\jimin\PycharmProjects\capstoneproject\image" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.erase">
+  <component name="RunManager" selected="Python.makeeditfile">
     <configuration name="erase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,7 +113,51 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/erase.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\jimin\PycharmProjects\capstoneproject\json\erase.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="makeeditfile" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="capstoneproject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/json" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/json/makeeditfile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="makejsonfile (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="capstoneproject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/json" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/json/makejsonfile.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -124,51 +179,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/makejsonfile.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="prac" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="capstoneproject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/vote_database" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vote_database/prac.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="prac01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="capstoneproject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/practice" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/practice/prac01.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\jimin\PycharmProjects\capstoneproject\json\makejsonfile.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,7 +201,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/token_dict.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\jimin\PycharmProjects\capstoneproject\json\token_dict.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -201,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.makeeditfile" />
+        <item itemvalue="Python.makejsonfile (1)" />
         <item itemvalue="Python.erase" />
         <item itemvalue="Python.makejsonfile" />
         <item itemvalue="Python.token_dict" />
-        <item itemvalue="Python.prac" />
-        <item itemvalue="Python.prac01" />
       </list>
     </recent_temporary>
   </component>
@@ -234,6 +245,8 @@
       <workItem from="1605938530373" duration="6780000" />
       <workItem from="1606024646656" duration="77000" />
       <workItem from="1607822945680" duration="605000" />
+      <workItem from="1607833682214" duration="1286000" />
+      <workItem from="1607859260216" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="(proceeding) test.py is main.">
       <created>1602188247000</created>
@@ -305,7 +318,28 @@
       <option name="project" value="LOCAL" />
       <updated>1607791422629</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="create dict_one.json and erase.json">
+      <created>1607833722268</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607833722268</updated>
+    </task>
+    <task id="LOCAL-00012" summary="moved files">
+      <created>1607834871747</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607834871747</updated>
+    </task>
+    <task id="LOCAL-00013" summary="removed vote_database.zip">
+      <created>1607834891223</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607834891223</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +380,10 @@
     <MESSAGE value="proceeding sql" />
     <MESSAGE value="create json files" />
     <MESSAGE value="modified token_dict.json files" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified token_dict.json files" />
+    <MESSAGE value="create dict_one.json and erase.json" />
+    <MESSAGE value="moved files" />
+    <MESSAGE value="removed vote_database.zip" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed vote_database.zip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -356,7 +393,7 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/token_dict.py</url>
+          <url>file://$PROJECT_DIR$/json/token_dict.py</url>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
@@ -366,11 +403,13 @@
     <SUITE FILE_PATH="coverage/capstoneproject$test.coverage" NAME="test Coverage Results" MODIFIED="1602217066427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstoneproject$prac01.coverage" NAME="prac01 Coverage Results" MODIFIED="1603784283202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/practice" />
     <SUITE FILE_PATH="coverage/capstoneproject$open.coverage" NAME="open Coverage Results" MODIFIED="1602187556148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/capstoneproject$erase.coverage" NAME="erase Coverage Results" MODIFIED="1607797136498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstoneproject$erase.coverage" NAME="erase Coverage Results" MODIFIED="1607859557391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstoneproject$makejsonfile.coverage" NAME="makejsonfile Coverage Results" MODIFIED="1607797119930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstoneproject$prac.coverage" NAME="prac Coverage Results" MODIFIED="1605943334551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vote_database" />
+    <SUITE FILE_PATH="coverage/capstoneproject$makeeditfile.coverage" NAME="makeeditfile Coverage Results" MODIFIED="1607859864521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/json" />
     <SUITE FILE_PATH="coverage/capstoneproject$search_dict.coverage" NAME="search_dict Coverage Results" MODIFIED="1607788511659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstoneproject$hello.coverage" NAME="hello Coverage Results" MODIFIED="1602167679516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/capstoneproject$token_dict.coverage" NAME="token_dict Coverage Results" MODIFIED="1607791374652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/capstoneproject$makejsonfile__1_.coverage" NAME="makejsonfile (1) Coverage Results" MODIFIED="1607859563470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/json" />
   </component>
 </project>
