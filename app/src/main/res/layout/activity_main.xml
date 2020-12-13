@@ -10,30 +10,68 @@
 
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:fillViewport="true"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:padding="30dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:fillViewport="true"
+        android:padding="30dp" >
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/et_token"
-            android:layout_weight="1"
-            android:hint="token을 입력해주세요." />
-
-        <Button
-            android:id="@+id/btn_insert"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
-            android:gravity="center"
-            android:text="insert" />
+            android:text=""
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/et_token"
+                android:layout_weight="1"
+                android:hint="token을 입력해주세요." />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <Button
+                android:text="search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_search"
+                android:layout_weight="1" />
+
+
+            <Button
+                android:text="Insert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_insert"
+                android:layout_weight="1" />
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="\n 입력 token의 투표 미참여 학생 확인 : SEARCH \n 입력 token의 투표화면으로 이동 : INSERT"
+            android:textSize="15sp" />
 
     </LinearLayout>
+
 
 
     <LinearLayout
@@ -70,11 +108,7 @@
             android:clickable="true"
             app:srcCompat="@android:drawable/ic_input_add" />
 
-        <Button
-            android:id="@+id/btn_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="카운트 테스트" />
+
 
 
 
