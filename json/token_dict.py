@@ -11,7 +11,7 @@ tokens = OrderedDict()
 
 
 #tokens.txt 파일에서 토큰을 읽어온다.
-with open("./tokens.txt" , "r") as f:
+with open("token_data/tokens.txt", "r") as f:
     token= []
     line = f.readline()
     line = line.split(",")

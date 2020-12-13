@@ -9,7 +9,7 @@ search = OrderedDict()
 
 
 #search.txt 파일에서 난수를 얻어온다.
-with open("./search.txt" , "r") as f:
+with open("token_data/search.txt", "r") as f:
     searches= []
     line = f.readline()
     line = line.split(",")

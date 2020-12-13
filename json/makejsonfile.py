@@ -16,7 +16,7 @@ dict1["key"] = key
 
 
 #tokens.txt 파일에서 토큰을 읽어온다.
-with open("./tokens.txt" , "r") as f:
+with open("token_data/tokens.txt", "r") as f:
     token= []
     line = f.readline()
     line = line.split(",")
@@ -36,7 +36,7 @@ dict1["tokens"] = tokens
 
 
 #search.txt 파일에서 난수를 얻어온다.
-with open("./search.txt" , "r") as f:
+with open("token_data/search.txt", "r") as f:
     searches= []
     line = f.readline()
     line = line.split(",")
