@@ -20,6 +20,9 @@ public class CreatActivity3 extends AppCompatActivity {
     private int list2_name_size;
     private int list2_pledge_size;
 
+    private TextView tv_token;      // 여기에서 토큰(투표하러 갈수있는 토큰)을 찍어주면 됩니다.
+    private TextView tv_search;     // 여기에서 search토큰(투표 안한사람 확인하는 토큰)을 찍어주면 됩니다.
+
     private TextView tv_list3;
     private TextView tv_list4;
 
@@ -34,6 +37,11 @@ public class CreatActivity3 extends AppCompatActivity {
 
         tv_list1 = findViewById(R.id.tv_list1);
         tv_list2 = findViewById(R.id.tv_list2);
+
+        //tv_token = findViewById(R.id.tv_token);         // 여기에서 토큰(투표하러 갈수있는 토큰)을 찍어주면 됩니다.
+        //tv_search = findViewById(R.id.tv_search);       // 여기에서 search토큰(투표 안한사람 확인하는 토큰)을 찍어주면 됩니다.
+        // "key"의 value값 + 1 을 이용해 dict1에서 token들을 가져오면 됩니다.
+
 
         Intent intent = getIntent();  // 어디선가 날라오는 데이터값이 있으면 이쪽에서 그 값을 받겠다 = getIntent()
         ArrayList list1 = (ArrayList) intent.getSerializableExtra("list1");

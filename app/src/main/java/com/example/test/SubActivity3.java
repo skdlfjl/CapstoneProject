@@ -33,6 +33,8 @@ public class SubActivity3 extends AppCompatActivity {
 
         btn_next = (Button) findViewById(R.id.btn_next);
         // next 버튼 누르면 생기는 일 >> 일단 시작화면으로 돌아가게 해놨습니다~~
+        // sub4를 만들어서 거기로 이동하게 해야합니다.
+        // 이동할 때 next 버튼을 누르는데, 이때 후보자의 득표수가 +1 되야합니다
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

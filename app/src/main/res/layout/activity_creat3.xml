@@ -22,10 +22,18 @@
             android:textSize="15dp" />
 
         <TextView
+            android:id="@+id/tv_token"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="[ token : 여기에 생성된  토큰이 입력되어야 함 ] \n"
+            android:text="[ token : 생성된 tokens토큰이 입력되어야 함 ] \n 이건 투표참가자(참가명단o) 전용 토큰 \n "
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[ search : 생성된 search토큰이 입력되어야 함 ] \n 이건 투표개설자(혹은 투표관리자) 전용 토큰 \n "
             android:textSize="18dp"/>
 
 
