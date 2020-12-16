@@ -1,21 +1,24 @@
 package com.example.test;
 //선거명부 입력 후에 후보 명단과 공약을 입력 받습니다.
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.renderscript.Sampler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import org.w3c.dom.Text;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -25,7 +28,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.BreakIterator;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class CreatActivity2 extends AppCompatActivity {
@@ -33,6 +36,15 @@ public class CreatActivity2 extends AppCompatActivity {
     private EditText et_name;
     private EditText et_pledge;
     private TextView tv_display;
+    //내가 추가한 코드
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
+
+
+    //value를 나중에 creatActivity3으로 보내줘야해서 미리 변수로 지정 public 이 나은지? 아니면 private 이 나은지?
+    private Long key_value;
+    public ArrayList token_array ;
+    public Integer len_token;
 
     static final String mFILENAME = "myContacts2.txt";
 
@@ -57,15 +69,72 @@ public class CreatActivity2 extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (list2.size() > 0) {
-                    Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
-                    intent.putExtra("list1", list1);
-                    intent.putExtra("list2", list2);
-                    startActivity(intent);
+
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+               DatabaseReference myRef = database.getReference("dict1");
+                myRef.child("key").setValue(0);
+                // Read from the database
+                // 값은 변하지 않고 그 0 이라는 값만 가지고 옴
+                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                        key_value= (Long) datasnapshot.child("key").getValue();
+//                        token_array = (ArrayList) datasnapshot.child("tokens").getValue();
+//                        len_token = token_array.size() -1 ;
+                        Log.d("dict 1 key is: ", key_value.toString());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+                if (list2_name.size() > 0) {   // 후보자 이름은 무조건 작성되어야합니다 (한명이상)
+                    int j = 0;
+                    for (int i = 0; i < list2_pledge.size(); i++) {
+                        String a = (String) list2_pledge.get(i);
+                        if (a.length() == 0) {
+                            j += 1;
+                            //continue;
+                        }
+                    }
+
+
+                    if (j == list2_pledge.size()) {
+                        Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
+                        intent.putExtra("list1", list1);
+                        intent.putExtra("list2_name", list2_name);
+                        // 내가 추가한 코드 : creatActivity3 으로 보내줌
+                        intent.putExtra("token+1", key_value);
+                        intent.putExtra("len_token",len_token);
+                        intent.putExtra("token_array",token_array);
+                        startActivity(intent);
+
+                    } else if ( j == 0 ) {
+                        Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
+                        intent.putExtra("list1", list1);
+                        intent.putExtra("list2_name", list2_name);
+                        intent.putExtra("list2_pledge", list2_pledge);
+                        // 내가 추가한 코드 : creatActivity3 으로 보내줌
+                        intent.putExtra("key_value", key_value);
+                        intent.putExtra("len_token",len_token);
+                        intent.putExtra("token_array",token_array);
+                        startActivity(intent);
+
+
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), "후보 공약이 일부 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
+                    }
+
                 } else {
-                    Toast.makeText(getApplicationContext(), "후보 이름이 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "후보자 이름이 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
                 }
+
             }
+
         });
 
     }
@@ -116,14 +185,16 @@ public class CreatActivity2 extends AppCompatActivity {
         //지정된 파일 자체를 삭제할 수 있게하는 코드
         if (deleteFile(mFILENAME)) {
             tv_display.setText("delete success");
-            list2.clear();
+            list2_name.clear();
+            list2_pledge.clear();
         }else
             tv_display.setText("delete failed");
     }
 
 
 
-    ArrayList list2 = new ArrayList();
+    ArrayList list2_name = new ArrayList();
+    ArrayList list2_pledge = new ArrayList();
     private void displayContacts() {
         FileInputStream fis = null;
         BufferedInputStream bis = null;
@@ -139,11 +210,17 @@ public class CreatActivity2 extends AppCompatActivity {
                 String name = dis.readUTF();
                 String pledge = dis.readUTF();
 
-                str += name + " | " + pledge + "\n";
+                list2_name.add(name);
+                list2_pledge.add(pledge);
+
+                //String name_pledge = name + " | " + pledge;
+                //list2.add(name_pledge);
+
+                str += name + " : " + pledge + "\n";
             }
             tv_display.setText(str);
 
-            list2.add(str);
+            //list2.add(str);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
