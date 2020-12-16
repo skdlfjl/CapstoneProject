@@ -74,14 +74,11 @@ public class CreatActivity2 extends AppCompatActivity {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                DatabaseReference myRef = database.getReference("dict1");
                 myRef.child("key").setValue(0);
-                // Read from the database
                 // 값은 변하지 않고 그 0 이라는 값만 가지고 옴
                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                         key_value= (Long) datasnapshot.child("key").getValue();
-//                        token_array = (ArrayList) datasnapshot.child("tokens").getValue();
-//                        len_token = token_array.size() -1 ;
                         Log.d("dict 1 key is: ", key_value.toString());
                     }
 
@@ -108,8 +105,6 @@ public class CreatActivity2 extends AppCompatActivity {
                         intent.putExtra("list2_name", list2_name);
                         // 내가 추가한 코드 : creatActivity3 으로 보내줌
                         intent.putExtra("token+1", key_value);
-                        intent.putExtra("len_token",len_token);
-                        intent.putExtra("token_array",token_array);
                         startActivity(intent);
 
                     } else if ( j == 0 ) {
@@ -119,8 +114,6 @@ public class CreatActivity2 extends AppCompatActivity {
                         intent.putExtra("list2_pledge", list2_pledge);
                         // 내가 추가한 코드 : creatActivity3 으로 보내줌
                         intent.putExtra("key_value", key_value);
-                        intent.putExtra("len_token",len_token);
-                        intent.putExtra("token_array",token_array);
                         startActivity(intent);
 
 
