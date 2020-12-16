@@ -21,14 +21,14 @@ public class SubActivity2 extends AppCompatActivity {
     // dict2 = {"302327vyztx" : [["20171478", Null], ["20171489", Null], ["20181466", Null]]}
     // dict3 = {"302327vyztx" : [("유지민", "당선되면 햄버거를 사주겠습니다"), ("이지희", "콜라 사드리겠습니다")]}
 
-    // 일단 SubActivity에서 선거참여명부에 등록된(dict2)학생 학번이 하나 날라올것입니다. (str2변수에 저장했습니다)
+    // 일단 SubActivity에서 선거참여명부에 등록된(dict2)학생 학번이 하나 날라올것입니다. (studentID변수에 저장했습니다)
     // 이건 좀 이따가 보도록 하고 투표먼저 봅시다.
 
     // 일단 dict3을 이용해 투표시스템을 만들어야합니다.
     // 지금 액티비티를 분리할까 고민중입니다 (단순히 후보와 공약만을 보여주는 페이지와, 투표만 하는 페이지로)
     // 만약 분리한다면 여기는 단순히 후보와 공약만 보여주는 페이지가 되겠죠?
     // 그러면 딱히 dict2를 가져올 필요가 없겠네요, 그냥 학번만 받아서 또 다음 액티비티로 넘기면 됩니다.
-    // 생각해보니 SubActivity에서 받은 token도 가져와야겠네요. str변수에 저장되어있습니다. (학번은 str2)
+    // 생각해보니 SubActivity에서 받은 token도 가져와야겠네요. token변수에 저장되어있습니다. (학번은 studentID)
 
     // Ex) 액티비티 분리
     // 여기에서는 특정 토큰에 해당되는 후보와 공약을 보여줘야합니다. 토큰이 "302327vyztx"라고 가정합시다.
@@ -70,18 +70,18 @@ public class SubActivity2 extends AppCompatActivity {
         tv_studentID = findViewById(R.id.tv_studentID);
         tv_token = findViewById(R.id.tv_token);
         Intent intent = getIntent();  // 어디선가 날라오는 데이터값이 있으면 이쪽에서 그 값을 받겠다 = getIntent()
-        String str2 = intent.getStringExtra("str2"); // 이건 학번 저장해둔거, 이 페이지에서 사용 안합니다 그냥 뒤로 날립니다
-        String str = intent.getStringExtra("str"); // 이건 토큰 저장해둔거 이 페이지에서 사용합니다
-        //tv_studentID.setText(str2);
-        tv_token.setText(str);
+        String studentID = intent.getStringExtra("studentID"); // 이건 학번 저장해둔거, 이 페이지에서 사용 안합니다 그냥 뒤로 날립니다
+        String token = intent.getStringExtra("token"); // 이건 토큰 저장해둔거 이 페이지에서 사용합니다
+        //tv_studentID.setText(studentID);
+        tv_token.setText(token);
 
         btn_next = findViewById(R.id.btn_next);
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SubActivity2.this, SubActivity3.class);
-                intent.putExtra("str2", str2);  // putExtra로 str2(학번)데이터를 담는다
-                intent.putExtra("str", str);    // str에 저장된 token을 담는다
+                intent.putExtra("studentID", studentID);  // putExtra로 studentID(학번)데이터를 담는다
+                intent.putExtra("token", token);    // token을 담는다
                 startActivity(intent);
             }
         });

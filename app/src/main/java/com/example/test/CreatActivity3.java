@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class CreatActivity3 extends AppCompatActivity {
 
-    private Button btn_revert;
+    private Button btn_finish;
 
     private TextView tv_list1;
     private TextView tv_list2;
@@ -44,20 +44,20 @@ public class CreatActivity3 extends AppCompatActivity {
 
 
         Intent intent = getIntent();  // 어디선가 날라오는 데이터값이 있으면 이쪽에서 그 값을 받겠다 = getIntent()
-        ArrayList list1 = (ArrayList) intent.getSerializableExtra("list1");
+        ArrayList list1_studentID = (ArrayList) intent.getSerializableExtra("list1_studentID");
         ArrayList list2_name = (ArrayList) intent.getSerializableExtra("list2_name");
         ArrayList list2_pledge = (ArrayList) intent.getSerializableExtra("list2_pledge");
 
-        //list1_size = list1.size();
+        //list1_size = list1_studentID.size();
         //for(int i=0; i<list1_size; i++){
-        //    tv_list1.setText((String) list1.get(i));
+        //    tv_list1.setText((String) list1_studentID.get(i));
         //}
 
 
-        list1_size = list1.size();
+        list1_size = list1_studentID.size();
         for(int i=0; i<list1_size; i++){
             //저장할때 걍 \n문자 빼버려서 죄다 쭈루룩 합쳐진상태로 찍히길래 그냥 textview에 찍어줄때만 \n 추가해서 찍어준거임~~~
-            sb1.append(list1.get(i) + "\n");
+            sb1.append(list1_studentID.get(i) + "\n");
             tv_list1.setText(sb1.toString());
         }
 
@@ -88,8 +88,8 @@ public class CreatActivity3 extends AppCompatActivity {
 
 
         //이건 버튼 눌렀을 때 맨 처음화면으로 돌아가는거
-        btn_revert = findViewById(R.id.btn_revert);
-        btn_revert.setOnClickListener(new View.OnClickListener() {
+        btn_finish = findViewById(R.id.btn_finish);
+        btn_finish.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

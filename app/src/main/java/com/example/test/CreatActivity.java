@@ -61,9 +61,9 @@ public class CreatActivity extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (list1.size() > 0) {
+                if (list1_studentID.size() > 0) {
                     Intent intent = new Intent(CreatActivity.this, CreatActivity2.class);
-                    intent.putExtra("list1", list1);
+                    intent.putExtra("list1_studentID", list1_studentID);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "후보 이름이 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
@@ -117,13 +117,13 @@ public class CreatActivity extends AppCompatActivity {
         //지정된 파일 자체를 삭제할 수 있게하는 코드
         if (deleteFile(mFILENAME)) {
             tv_display.setText("delete success");
-            list1.clear();
+            list1_studentID.clear();
         }else
             tv_display.setText("delete failed");
     }
 
 
-    ArrayList list1 = new ArrayList();
+    ArrayList list1_studentID = new ArrayList();
     private void displayContacts() {
         FileInputStream fis = null;
         BufferedInputStream bis = null;
@@ -138,13 +138,13 @@ public class CreatActivity extends AppCompatActivity {
             while (dis.available() > 0) {
                 String studentID = dis.readUTF();
 
-                list1.add(studentID);
+                list1_studentID.add(studentID);
 
                 str += studentID + "\n";
 
             }
             tv_display.setText(str);
-            //list1.add(str);
+            //list1_studentID.add(str);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

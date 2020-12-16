@@ -50,7 +50,7 @@ public class CreatActivity2 extends AppCompatActivity {
         displayContacts();
 
         Intent intent = getIntent();  // 어디선가 날라오는 데이터값이 있으면 이쪽에서 그 값을 받겠다 = getIntent()
-        ArrayList list1 = (ArrayList) intent.getSerializableExtra("list1");
+        ArrayList list1_studentID = (ArrayList) intent.getSerializableExtra("list1_studentID");
 
         btn_next = (Button) findViewById(R.id.btn_next);
         // next 버튼 누르면 생기는 일
@@ -69,13 +69,13 @@ public class CreatActivity2 extends AppCompatActivity {
 
                     if (j == list2_pledge.size()) {
                         Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
-                        intent.putExtra("list1", list1);
+                        intent.putExtra("list1_studentID", list1_studentID);
                         intent.putExtra("list2_name", list2_name);
                         startActivity(intent);
 
                     } else if ( j == 0 ) {
                         Intent intent = new Intent(CreatActivity2.this, CreatActivity3.class);
-                        intent.putExtra("list1", list1);
+                        intent.putExtra("list1_studentID", list1_studentID);
                         intent.putExtra("list2_name", list2_name);
                         intent.putExtra("list2_pledge", list2_pledge);
                         startActivity(intent);

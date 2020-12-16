@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class SubActivity extends AppCompatActivity {
 
-    static int find(String[] arr, String s) {
+    static int find(String[] arr, String s) {      // find함수 한번 손 봐야합니다 .... DB랑 연동했을때 쓸거같진 않지만 혹시 모르니까요
         for(int i = 0; i < arr.length; i++) {
             if(arr[i].indexOf(s) >= 0)
                 return 1;
@@ -24,7 +24,7 @@ public class SubActivity extends AppCompatActivity {
     private TextView tv_token;
     private EditText et_studentID;
     private Button btn_next;
-    private String str2;    // 입력된 학번을 받는 변수입니다, 변수 명을 바꿔주면 좋을듯...
+    private String studentID;    // 입력된 학번을 받는 변수입니다
     int where;
 
     // dict2 = {"302327vyztx" : [["20171478", Null], ["20171489", Null], ["20181466", Null]]}
@@ -83,8 +83,8 @@ public class SubActivity extends AppCompatActivity {
         // 매우 중요한 설명이니 꼭 읽으세요!!!!!!!!!!!!!!!!!!!!!!!
         tv_token = findViewById(R.id.tv_token);
         Intent intent = getIntent();  // 어디선가 날라오는 데이터값이 있으면 이쪽에서 그 값을 받겠다 = getIntent()
-        String str = intent.getStringExtra("str"); // 메인 액티비티에서 날려보낸 데이터값을 지정한 이름이 "str"이었으니까 여기도 "str"로 받는다
-        tv_token.setText(str);
+        String token = intent.getStringExtra("token"); // 메인 액티비티에서 날려보낸 데이터값을 지정한 이름이 "token"이었으니까 여기도 "token"로 받는다
+        tv_token.setText(token);
         // 이거는 그냥 텍스트뷰에 토큰을 찍어서 보여주는 코드입니다(토큰이 존재할 경우)
         // 여기서 이 받아온 토큰을 통해 student_id = {"20171478","20181234","20192345","20205532","20213356"} << 이 값을 db에서 받아와야 합니다.
 
@@ -95,22 +95,22 @@ public class SubActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // next 버튼 클릭했을때 실행되는거!!
-                str2 = et_studentID.getText().toString();  // 넣은 학번을 string 형태로 가져와서 str(빈 변수)에 저장한다
-                where = find(student_id,str2);
+                studentID = et_studentID.getText().toString();  // 입력한 학번을 string 형태로 가져와서 studentID(빈 변수)에 저장한다
+                where = find(student_id, studentID);
 
                 if(where==1) {
                     //dict3을 이용하는 코드입니다. if(isinstance(dict[1][0], tuple)이 T일 경우에만 pledge가 생성됩니다.
                     if(pledge != null) {
                         //pledge가 존재할경우 SubActivity2(후보자, 공약 보여주는 페이지)로!
                         Intent intent = new Intent(SubActivity.this, SubActivity2.class);
-                        intent.putExtra("str2", str2);  // putExtra로 str2(입력한 학번)데이터를 담는다
-                        intent.putExtra("str", str);    // str에 입력된 token을 담는다
+                        intent.putExtra("studentID", studentID);  // putExtra로 studentID(입력한 학번)데이터를 담는다
+                        intent.putExtra("token", token);    // token을 담는다
                         startActivity(intent);  // 실제로 액티비티 이동하는 구문, 담은 데이터를 서브 액티비티로 쏜다!!  >>  서브 액티비티로 가서 코드를 만들어주자
                     } else {
                         //pledge가 존재하지 않을경우 SubActivity3(투표하는 페이지)로!!!
                         Intent intent = new Intent(SubActivity.this, SubActivity3.class);
-                        intent.putExtra("str2", str2);  // putExtra로 str2(입력한 학번)데이터를 담는다
-                        intent.putExtra("str", str);    // str에 입력된 token을 담는다
+                        intent.putExtra("studentID", studentID);  // putExtra로 studentID(입력한 학번)데이터를 담는다
+                        intent.putExtra("token", token);    // token을 담는다
                         startActivity(intent);  // 실제로 액티비티 이동하는 구문, 담은 데이터를 서브 액티비티로 쏜다!!  >>  서브 액티비티로 가서 코드를 만들어주자
                     }
                 } else {

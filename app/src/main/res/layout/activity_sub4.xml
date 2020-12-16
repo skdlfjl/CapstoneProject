@@ -29,6 +29,13 @@
             android:text="투표를 진행하는 페이지입니다.\n이 textview에는 넘어온 토큰이 찍힙니다"
             android:textSize="20sp" />
 
+        <TextView
+            android:id="@+id/tv_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택된 후보자 이름이 출력됩니다."
+            android:textSize="20sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,28 +43,13 @@
 
 
             <Button
-                android:id="@+id/btn_show"
+                android:id="@+id/btn_finish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|bottom"
                 android:gravity="center"
-                android:text="show" />
+                android:text="finish" />
 
-
-            <Button
-                android:id="@+id/btn_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|bottom"
-                android:gravity="center"
-                android:text="NEXT" />
-
-            <TextView
-                android:id="@+id/tv_show"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="선택된 후보자 이름이 출력됩니다."
-                android:textSize="20sp" />
 
         </LinearLayout>
 
