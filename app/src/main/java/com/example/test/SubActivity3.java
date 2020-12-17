@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,10 +23,10 @@ public class SubActivity3 extends AppCompatActivity {
     //
     private TextView tv_studentID;
     private TextView tv_token;
-    private TextView tv_show;
+    RadioGroup rg;
 
-    private Button btn_next;
-    private Button btn_show;   //누르면 투표창이 보입니다
+    private Button btn_submit;
+    //private Button btn_show;   //누르면 투표창이 보입니다
     // 여기서 체크된 후보자를 임의의 변수 'pick' 에 저장할 수 있어야합니다.
     //private String pick;
 
@@ -79,68 +80,57 @@ public class SubActivity3 extends AppCompatActivity {
         tv_token.setText(token);
 
         //-------------------------------------------------------------------------
-        tv_show = findViewById(R.id.tv_show);
-        final int[] selectedName = {0};
 
-        btn_show = (Button) findViewById(R.id.btn_show);
-        btn_show.setOnClickListener(new View.OnClickListener() {
+        DisplayRadioButton();
+
+        rg = (RadioGroup) findViewById(R.id.RadioGroup01);
+
+        // submit 버튼 누르면 생기는 일
+        // sub4로 이동하게 해야합니다.
+        // 이동할 때 submit 버튼을 누르는데, 이때 후보자의 득표수가 +1 되야합니다
+        btn_submit = (Button) findViewById(R.id.btn_submit);
+        btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder dialog = new AlertDialog.Builder(SubActivity3.this);
-                dialog  .setTitle("후보자를 고르세요")
-                        .setSingleChoiceItems(names, 0, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                selectedName[0] = which;
-                            }
-                        })
-                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(SubActivity3.this
-                                        , names[selectedName[0]]
-                                        , Toast.LENGTH_SHORT).show();
-                                tv_show.setText(names[selectedName[0]]);
-                            }
-                        })
-                        .setNeutralButton("취소", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(SubActivity3.this
-                                        , "취소 버튼을 눌렀습니다"
-                                        , Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                dialog.create();
-                dialog.show();
-            }
-        });
+                RadioButton rd = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
+                String pick = rd.getText().toString();
+                //Toast.makeText(getApplicationContext(), str_Qtype+" 선택됨", Toast.LENGTH_SHORT).show();
 
-        String pick = names[selectedName[0]];
-
-        //-------------------------------------------------------------------------
-
-
-        // next 버튼 누르면 생기는 일 >> 일단 시작화면으로 돌아가게 해놨습니다~~
-        // sub4를 만들어서 거기로 이동하게 해야합니다.
-        // 이동할 때 next 버튼을 누르는데, 이때 후보자의 득표수가 +1 되야합니다
-        btn_next = (Button) findViewById(R.id.btn_next);
-        btn_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SubActivity4.class);
                 intent.putExtra("studentID", studentID);  // putExtra로 studentID(학번)데이터를 담는다
                 intent.putExtra("token", token);    // token을 담는다
                 intent.putExtra("pick", pick);      // 누굴 뽑았나요? == pick
                 startActivity(intent);
-            }
 
+            }
         });
+
 
     }
 
+    public void DisplayRadioButton() {
+        for(int i=0;i<names.length;i++) {
+            RadioGroup radiogroup = (RadioGroup)findViewById(R.id.RadioGroup01);
+            RadioButton rdbtn = new RadioButton(this);
+            rdbtn.setId(i);
+            rdbtn.setText(names[i]);
+            radiogroup.addView(rdbtn);
+        }
+
+    }
+
+        //-------------------------------------------------------------------------
+
+
+        // submit 버튼 누르면 생기는 일
+        // sub4로 이동하게 해야합니다.
+        // 이동할 때 submit 버튼을 누르는데, 이때 후보자의 득표수가 +1 되야합니다
+
 
 }
+
+
+
 
 
 
