@@ -5,9 +5,15 @@ package com.example.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class SubActivity2 extends AppCompatActivity {
@@ -16,6 +22,9 @@ public class SubActivity2 extends AppCompatActivity {
     private TextView tv_token;
 
     private Button btn_next;
+
+    private static final float FONT_SIZE = 15;
+    private LinearLayout linearLayout;
 
     // 여기에선 DB의 2가지 dict가 사용됩니다
     // dict2 = {"302327vyztx" : [["20171478", Null], ["20171489", Null], ["20181466", Null]]}
@@ -62,6 +71,9 @@ public class SubActivity2 extends AppCompatActivity {
     // 위에 사용한 if문이 T일경우 SubActivity2로 넘어와서 후보자랑 공약을 보여주면 되구요
     // F일 경우 바로 SubActivity3으로 넘어가서 투표를 진행하면 됩니다.
 
+    String[] names = {"유지민", "이지희"};
+    String[] pledge = {"당선되면 햄버거를 사주겠습니다", "콜라 사드리겠습니다"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +84,10 @@ public class SubActivity2 extends AppCompatActivity {
         Intent intent = getIntent();  // 어디선가 날라오는 데이터값이 있으면 이쪽에서 그 값을 받겠다 = getIntent()
         String studentID = intent.getStringExtra("studentID"); // 이건 학번 저장해둔거, 이 페이지에서 사용 안합니다 그냥 뒤로 날립니다
         String token = intent.getStringExtra("token"); // 이건 토큰 저장해둔거 이 페이지에서 사용합니다
-        //tv_studentID.setText(studentID);
+        tv_studentID.setText(studentID);
         tv_token.setText(token);
+
+        textview();
 
         btn_next = findViewById(R.id.btn_next);
         btn_next.setOnClickListener(new View.OnClickListener() {
@@ -83,9 +97,30 @@ public class SubActivity2 extends AppCompatActivity {
                 intent.putExtra("studentID", studentID);  // putExtra로 studentID(학번)데이터를 담는다
                 intent.putExtra("token", token);    // token을 담는다
                 startActivity(intent);
+
             }
         });
 
+
+
+
+    }
+    public void textview(){
+        for(int i = 0; i < pledge.length; i++){
+            linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+            TextView view1 = new TextView(this);
+            view1.setId(i);
+            //view1.setText(names[i]);
+            view1.setText(names[i]+':'+pledge[i]);
+            view1.setTextSize(FONT_SIZE);
+            view1.setTextColor(Color.BLACK);
+
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp.gravity = Gravity.CENTER;
+            view1.setLayoutParams(lp);
+
+            linearLayout.addView(view1);
+        }
 
     }
 }

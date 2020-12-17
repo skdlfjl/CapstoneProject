@@ -43,11 +43,11 @@ public class SubActivity extends AppCompatActivity {
 
     // dict3 = {"302327vyztx" : [("유지민", "당선되면 햄버거를 사주겠습니다"), ("이지희", "콜라 사드리겠습니다")]}
     // 1번경우
-    //String[] name = {"유지민", "이지희"};
-    //String[] pledge = {"당선되면 햄버거를 사주겠습니다", "콜라 사드리겠습니다"};
+    String[] names = {"유지민", "이지희"};
+    String[] pledge = {"당선되면 햄버거를 사주겠습니다", "콜라 사드리겠습니다"};
     // 2번경우
-    String[] name = {"유지민", "이지희"};
-    String[] pledge;
+    //String[] names = {"유지민", "이지희"};
+    //String[] pledge;
 
     // 1. 후보자와 공약이 합쳐져 튜플로 저장된상태
     // if문을 사용해야합니다. 어떻게 쓰느냐?
@@ -56,11 +56,11 @@ public class SubActivity extends AppCompatActivity {
     // https://nightohl.tistory.com/entry/element%EA%B0%80-list%EC%9D%B8%EC%A7%80-%ED%8C%90%EB%8B%A8%ED%95%98%EA%B8%B0
     // 말이 너무 길어졌네요.. 일단 저렇게 if문을 만족시킨다면 후보자와 공약이 둘 다 작성되었다는 뜻 입니다.
     // 파이썬이라면 이렇게 구현했을겁니다
-    //name = []
+    //names = []
     //pledge = []
     //>>> for i in range(len(dict3["302327vyztx"])):
     //...     n = dict3["302327vyztx"][i][0]
-    //...     name.append(n)
+    //...     names.append(n)
     //...     p = dict3["302327vyztx"][i][1]
     //...     pledge.append(p)
     // 이렇게하면 각 변수에 후보자와 공약이 저장되겠지요?

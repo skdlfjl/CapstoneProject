@@ -20,12 +20,14 @@ import java.util.List;
 public class SubActivity3 extends AppCompatActivity {
 
     // 드디어 투표를 하는 페이지입니다!!!
-    //
+
     private TextView tv_studentID;
     private TextView tv_token;
     RadioGroup rg;
 
     private Button btn_submit;
+    private static final float FONT_SIZE = 15;
+
     //private Button btn_show;   //누르면 투표창이 보입니다
     // 여기서 체크된 후보자를 임의의 변수 'pick' 에 저장할 수 있어야합니다.
     //private String pick;
@@ -64,7 +66,7 @@ public class SubActivity3 extends AppCompatActivity {
 
     // 확인용 임시 데이터입니다
     String[] names = new String[]{"유지민", "이지희", "기권"};
-    //ArrayList pick = new ArrayList();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,23 +111,16 @@ public class SubActivity3 extends AppCompatActivity {
     }
 
     public void DisplayRadioButton() {
-        for(int i=0;i<names.length;i++) {
+        for(int i = 0; i < names.length; i++) {
             RadioGroup radiogroup = (RadioGroup)findViewById(R.id.RadioGroup01);
             RadioButton rdbtn = new RadioButton(this);
             rdbtn.setId(i);
             rdbtn.setText(names[i]);
+            rdbtn.setTextSize(FONT_SIZE);
             radiogroup.addView(rdbtn);
         }
 
     }
-
-        //-------------------------------------------------------------------------
-
-
-        // submit 버튼 누르면 생기는 일
-        // sub4로 이동하게 해야합니다.
-        // 이동할 때 submit 버튼을 누르는데, 이때 후보자의 득표수가 +1 되야합니다
-
 
 }
 
