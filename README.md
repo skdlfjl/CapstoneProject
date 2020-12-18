@@ -1,6 +1,17 @@
 # capstoneproject
 Capstone project in Department of Bigdata engineering , SoonChunHyang University
 
+### 프로젝트 주제
+비대면 투표의 공정성 문제와 낮은 참여율을 개선하기 위한 투표 앱 개발
+
+### 사용방법
+apk파일 다운로드
+
+### 의존성
+- Android Studio 4.1.1
+- Java jdk 14 
+- Firebase
+
 
 ### Activity별 작동 원리
 #### 1. MainActivity
