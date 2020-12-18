@@ -26,7 +26,13 @@
             android:id="@+id/tv_token"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="후보의 공약을 보여주는 페이지.\n이 textview에는 넘어온 토큰이 찍힙니다"
+            android:text="후보의 공약을 보여주는 페이지.\n이 textview에는 넘어온 토큰이 찍힙니다\n"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\n"
             android:textSize="20sp" />
 
         <LinearLayout
@@ -41,6 +47,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/btn_next"

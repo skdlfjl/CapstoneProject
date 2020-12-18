@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private com.google.android.material.floatingactionbutton.FloatingActionButton btn_creat;
     //private Button btn_count;
     private String token;    // 입력된 토큰을 받는 변수입니다
-    String[] tokens = {"1111","2222","3333","4444","5555"};   //이걸 데이터베이스에서 가져와야 합니다 (수정필요!!!!!!) token_dict의 tokens에서 가져옵니다
+    String[] tokens = {"a0151539wrhdpa","z4909195yxwuar","f6396345htclnj","m0333280mhzgpt","o8991716mqchun"};   //이걸 데이터베이스에서 가져와야 합니다 (수정필요!!!!!!) token_dict의 tokens에서 가져옵니다
     int where;
 
     @Override
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // 여기는 정말 코드가 많이 추가되어야 합니다.
         // tokens_dict에서 일단 입력된 토큰(token변수에 저장했네요)을 key값으로 이용하게 됩니다.
         // tokens_dict의 tokens를 사용하게 되는데, tokens[token] 값이 0이면 학번쓰는 페이지 sub로 넘어가고, 1이면 투표 완료페이지로 가야합니다.
         // 물론 저장되지 않은 토큰이면 아래처럼 토스트메세지를 입력합니다
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         // 사용되는 토큰을 저장해둔 tokens_dict의 tokens의 토큰이 0일 경우, 페이지가 넘어갑니다.
         // 1일경우 투표가 완료되었으므로 이미 투표가 완료되었다는 토스트 메세지를 출력합니다.
         // 물론 저장되지 않은 토큰이면 아래처럼 토스트메세지를 입력합니다
-
         btn_search = findViewById(R.id.btn_search);
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override

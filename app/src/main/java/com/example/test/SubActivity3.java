@@ -38,34 +38,12 @@ public class SubActivity3 extends AppCompatActivity {
     // 3. pick      : !!!!!학생이 투표한 후보자 이름이 저장되어 있는 변수입니다!!!!!
 
     // 이 세가지 변수를 이용해 dict2와 dict3을 업데이트 해줘야합니다.
+    // 하지만 이 페이지에선 DB를 업데이트 하지 않습니다. Sub4에서 업데이트를 진행하며, 이 화면에서는 변수에 저장해 Sub4로 날려주기만 합니다.
 
-    // Ex)
-    //- dict2
-    //   -  "302327vyztx"
-    //           "20171478" : 0
-    //           "20171489" : 0
-    //           "20181466" : 0
-
-    // dict2[token][studentID] == 1
-    // 해당 학생이 투표를 완료했으므로 값을 1로 업데이트 해줍니다. 삭제해줘도 됩니다.
-
-    // EX)
-    // - dict3
-    //       - "302327vyztx"
-    //                - name
-    //                       - "유지민" : 0
-    //                       - "이지희" : 0
-    //                       - "기권" : 0
-    //                - pledge
-    //                       - "유지민" : "피자사줄게요"
-    //                       - "이지희" : "콜라사줄게요"
-
-    // dict3[token][name][pick] 값을 +1해준 상태로 업데이트 해줍니다.
-    // 여기까지 하면 투표가 완료됩니다.
-    // 이건 next 버튼을 눌렀을 때 일어나야 하는 일입니다.
 
     // 확인용 임시 데이터입니다
-    String[] names = new String[]{"유지민", "이지희", "기권"};
+    String[] names = {"유지민", "이지희", "장보현", "이가현", "기권"};
+    String[] pledge = {"당선되면 햄버거를 사주겠습니다", "저는 콜라 사드리겠습니다", "공약 없음", "뽑아주신다면 열심히 하겠습니다"};
 
 
     @Override
@@ -78,8 +56,8 @@ public class SubActivity3 extends AppCompatActivity {
         Intent intent = getIntent();  // 어디선가 날라오는 데이터값이 있으면 이쪽에서 그 값을 받겠다 = getIntent()
         String studentID = intent.getStringExtra("studentID"); // 이건 학번 저장해둔거
         String token = intent.getStringExtra("token"); // 이건 토큰 저장해둔거
-        tv_studentID.setText(studentID);
-        tv_token.setText(token);
+        tv_studentID.setText("투표 참여 학번: "+studentID);
+        tv_token.setText("token: "+token);
 
         //-------------------------------------------------------------------------
 

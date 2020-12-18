@@ -26,8 +26,14 @@ public class SubFinalActivity extends AppCompatActivity {
     private static final float FONT_SIZE = 15;
     private LinearLayout linearLayout;
 
-    String[] names = new String[]{"유지민", "이지희", "기권"};
-    int[] count = new int[]{14, 2, 4};  //총 20명의 투표자
+
+    // 투표가 전부 완료되었을 때 (token_dict의 tokens value가 0에서 1로 바뀌었을때) insert버튼을 누르면 자동으로 이동하는 화면입니다
+    // DB와 연동한 뒤, MainActivity의 insert버튼 클릭시 작동하는 코드를 변경해야 이 화면을 볼 수 있습니다.
+    // 투표 결과를 각 후보 득표수와 파이차트로 보여줍니다.
+
+    // 임시 데이터입니다.
+    String[] names = {"유지민", "이지희", "장보현", "이가현", "기권"};
+    int[] count = new int[]{3, 0, 2, 2, 0};  //총 7명의 투표자
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

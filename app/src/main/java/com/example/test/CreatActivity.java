@@ -66,7 +66,7 @@ public class CreatActivity extends AppCompatActivity {
                     intent.putExtra("list1_studentID", list1_studentID);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "후보 이름이 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "투표 참여자 명단이 작성되지 않았습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
