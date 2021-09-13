@@ -38,4 +38,4 @@ apk파일 다운로드
 ### 라이센스
 본 프로젝트는 학업/연구 목적, 혹은 비영리적인 목적으로 사용이 가능합니다.
 
-전체적인 권한은 최강지민 jjimini98@naver.com 이지희 user_11@naver.com 에게 있습니다.
+전체적인 권한은 최강지민 jjimini98@naver.com 유노지희 user_11@naver.com 에게 있습니다.
